@@ -1,2 +1,19 @@
-<h1>Tweets#index</h1>
-<p>Find me in app/views/tweets/index.html.erb</p>
+<h1>Welcome to Tweeter</h1>
+
+<h2>Sign Up</h2>
+<%= simple_form_for @user do |f| %>
+  <%= f.input :email %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.submit "Sign Up" %>
+<% end %>
+
+<h2>Sign In</h2>
+<%= form_tag auth_path, method: :post do %>
+  <%= label_tag :email %>
+  <%= text_field_tag :email, params[:email] %>
+  <br>
+  <%= label_tag :password %>
+  <%= text_field_tag :password, params[:password] %>
+  <%= submit_tag "Sign In" %>
+<% end %>

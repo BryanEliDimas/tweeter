@@ -4,8 +4,8 @@ class SessionController < ApplicationController
   end
 
   def create
-    email = params[:email]
-    password = params[:password]
+    email = params[:session][:email]
+    password = params[:session][:password]
 
     user = User.find_by(email: email)
 

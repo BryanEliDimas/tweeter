@@ -11,6 +11,14 @@ Rails.application.routes.draw do
 
   get 'dashboard/:id' => 'tweets#dashboard', as: :dashboard
 
+  get 'users/:id' => 'user#show', as: :user
+
+  post 'tweets' => 'tweets#create', as: :tweets
+
+  post '/follow/:id' => 'user#follow', as: :follow
+
+  post 'unfollow' => 'user#unfollow', as: :unfollow
+
   root 'tweets#index'
 
   end

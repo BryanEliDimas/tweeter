@@ -1,2 +1,34 @@
 <h1>Dashboard</h1>
-<p>Find me in app/views/tweets/dashboard.html.erb</p>
+
+<div class="row">
+  <div class="col-md-2">
+    <h1>Follow</h1>
+    <% @users.each do |user| %>
+      Follow <%= link_to user.username, follow_path(id: user.id), method: :post %>
+      <br>
+    <% end %>
+  </div>
+  <div class="col-md-2">
+    <h1>Following</h1>
+    <% @current_user.all_following.each do |following| %>
+      <div>
+        <%= following.username %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <%= simple_form_for @tweet, method: :post do |f| %>
+      <%= f.input :content %>
+      <%= f.submit "Publish", class: "btn btn-success" %>
+    <% end %>
+
+    <% @tweets.each do |tweet| %>
+      <div>
+        <%= tweet.content %>
+      </div>
+      <div>
+        by <%= tweet.user.username %>
+      </div> <br>
+    <% end %>
+  </div>
+</div>

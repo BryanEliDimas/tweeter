@@ -8,7 +8,7 @@ class TweetsController < ApplicationController
   end
 
   def dashboard
-    @users = User.all
+    @users = User.all.reject{|n| n == @current_user}
 
 
     if @current_user.nil?
@@ -19,11 +19,12 @@ class TweetsController < ApplicationController
 
     @tweet = Tweet.new
 
+    unless @current_user.nil?
+      followers_id = @current_user.following_users.pluck(:id)
+      tweets_ids = followers_id << @current_user.id
+    end
 
-    followers_id = @current_user.following_users.pluck(:id)
-    tweets_ids = followers_id << @current_user.id
-
-    @tweets = Tweet.where(user_id: tweets_ids).order("created_at desc")
+    @tweets = Tweet.where(user_id: tweets_ids).order("created_at desc").page(params[:page]).per(5)
 
   end
 

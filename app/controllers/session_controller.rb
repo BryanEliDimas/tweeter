@@ -11,7 +11,7 @@ class SessionController < ApplicationController
 
     if (user) && (user.authenticate password)
       session[:current_user] = user.id
-      redirect_to dashboard_path(id: session[:current_user]), notice: "You're signed in!"
+      redirect_to dashboard_path(id: session[:current_user]), notice: "You're signed in #{user.username}!"
     else
       redirect_to root_path, notice: "Please try again."
     end

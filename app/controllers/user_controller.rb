@@ -12,7 +12,7 @@ class UserController < ApplicationController
 
     if @user.save
       session[:current_user] = @user.id
-      redirect_to dashboard_path(session[:current_user]), notice: "Cool! You're signed up!"
+      redirect_to dashboard_path(session[:current_user]), notice: "Cool! You're signed up #{@user.username}!"
     else
       render :new, notice: "Something wrong."
     end
@@ -29,7 +29,7 @@ class UserController < ApplicationController
     user = User.find params[:id]
 
     @current_user.stop_following(user)
-    redirect_to #SOMEWHERE!
+    redirect_to dashboard_path(id: @current_user.id)
   end
 
 end

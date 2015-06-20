@@ -35,7 +35,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       redirect_to dashboard_path(id: @current_user.id)
     else
-      render :new
+      render "tweets/dashboard", notice: "Exceeded the max amount of characters"
     end
   end
 end

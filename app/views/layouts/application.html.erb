@@ -9,11 +9,11 @@
 <body>
   <div class="container">
       <% if notice %>
-        <%= notice %>
+        <span class="notice"><%= notice %></span>
       <% end %>
 
       <% if alert %>
-        <%= alert %>
+        <span class="alert"><%= alert %></span>
       <% end %>
 
       <% if !@current_user.nil? %>

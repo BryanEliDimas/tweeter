@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
-  validates :email, presence: true, uniqueness: true
-  validates :password, presence: true
+  validates :email, presence: true, uniqueness: true, format: { with: /\A\S+@.+\.\S+\z/ }
+  validates :password, presence: true, length: { minimum: 8 }
+  validates :username, presence: true, length: { minimum: 3 }
 
   has_secure_password
   acts_as_follower

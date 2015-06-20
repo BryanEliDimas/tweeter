@@ -14,7 +14,7 @@ class UserController < ApplicationController
       session[:current_user] = @user.id
       redirect_to dashboard_path(session[:current_user]), notice: "Cool! You're signed up #{@user.username}!"
     else
-      render :new, notice: "Something wrong."
+      render "tweets/index", notice: "Something wrong."
     end
   end
 

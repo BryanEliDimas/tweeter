@@ -55,32 +55,6 @@ After completing this assignment, you be able to effectively use
 * Data should be seeded (use `faker`)
 * Get live and up and working on Heroku
 
-            
-## Hard Mode
-            
-* User can view a profile (/users/jwo)
-* Users can block users for being a-holes
-* Users can search for posts
-* Users can upload a photo of themselvs
-* Users can add a photo to a post
-
-
-## Notes
-
-* When logged in, the root URL should show the messages from all the people you follow.
-* People can post "messages," "cheeps," or whatever you want to call them. They're tweets, but please don't call them that.
-* Getting the list of messages for You + people you follow is tricky'ish. Think of it like this:
-
-```ruby
-class User
-  def timeline
-    follower_ids = following_users.pluck(:id)
-    all_ids = follower_ids << user.id
-    Post.where(user_id: all_ids).order("created_at DESC")
-  end
-end
-```
-
 ## Additional Resources
 
 * [Acts As Follower](https://github.com/tcocca/acts_as_follower)

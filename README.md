@@ -1,49 +1,6 @@
-# Microblogging Social Network (Twitter)
+## The Iron Yard - Week 6 Lab - (Twitter)
 
-## Description
-Microblogging Social Network (Twitter)
-
-
-## Objectives
-
-### Learning Objectives
-
-After completing this assignment, you should…
-
-* Understand gems and their place in Rails development
-* Understand Relationships between models
-* Understand Personalization
-* Understand Authentication
-* Understand Pagination
-
-
-### Performance Objectives
-
-After completing this assignment, you be able to effectively use
-
-* authentication, sessions, and `current_user`
-* `bootstrap-sass`
-* `acts_as_follower`
-* `kaminari`
-* Validations
-* Controllers
-
-
-
-## Details
-
-### Deliverables
-
-* A repo containing at least:
-  * a user model 
-  * a post model that users can write
-  * a follow model
-
-### Requirements
-
-
-
-## Normal Mode
+### Features
 
 * Users can signup, and sign in
 * User can follow other users
@@ -55,6 +12,22 @@ After completing this assignment, you be able to effectively use
 * Data should be seeded (use `faker`)
 * Get live and up and working on Heroku
 
-## Additional Resources
+### Objectives
 
-* [Acts As Follower](https://github.com/tcocca/acts_as_follower)
+* Understand gems and their place in Rails development
+* Understand Relationships between models
+* Understand Personalization
+* Understand Authentication
+* Understand Pagination
+
+
+### Abilities
+
+To effectively use:
+
+* authentication, sessions, and `current_user`
+* `bootstrap-sass`
+* `acts_as_follower`
+* `kaminari`
+* Validations
+* Controllers
